@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores, Libros y Categorías</title>
+    <style>
+        /* Estilos CSS para la tabla */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Listado de Autores, Categorías</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Autor</th>
+
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterar sobre los resultados usando Thymeleaf -->
+            <tr th:each="resultado : ${resultados}">
+                <td th:text="${resultado[0]}">Autor</td> <!-- nombre del autor -->
+                <td th:text="${resultado[1]}">Nombre de la categoría</td> <!-- nombre de la categoría -->
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
